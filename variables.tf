@@ -16,3 +16,8 @@ variable "event_subscription_queue_name" {
   description = "The name of the Queue to subscribe new events"
   type        = "string"
 }
+
+variable "fifoQueue" {
+  description = "Boolean designating a FIFO queue. If not set, it defaults to false making it standard."
+  default     = false
+}

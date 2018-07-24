@@ -28,7 +28,8 @@ resource "aws_sqs_queue_policy" "subscription_queue_policy" {
 }
 
 resource "aws_sqs_queue" "events" {
-  name = "${var.env}-${var.event_subscription_queue_name}"
+  name       = "${var.env}-${var.event_subscription_queue_name}"
+  fifo_queue = "${var.fifoQueue}"
 
   tags {
     Environment = "${var.env}"
