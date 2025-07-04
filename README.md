@@ -1,3 +1,15 @@
+NOTE: this is obsolete and should be replaced by source = "mergermarket/cms-event-subscriber/acuris"
+```
+module "cms_subscriber" {
+  source  = "mergermarket/cms-event-subscriber/acuris"
+  version = "2.0.0"
+  env                           = terraform.workspace
+  event_subscription_queue_name = "funds-cms-subscription-queue"
+  cms_name                      = "funds"
+  cms_publish_topic             = module.cms_pub_store.events_topic_arn
+}
+```
+
 Event subscriber terraform module
 ================================
 
